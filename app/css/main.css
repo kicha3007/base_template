@@ -1,0 +1,392 @@
+@charset "UTF-8";
+/******************* Прижатый футер ************************/
+.wrapper {
+	min-height: 100%;
+	margin-bottom: -60px;
+	overflow: hidden;
+}
+
+.wrapper:after {
+	content: "";
+	display: block;
+	height: 60px;
+}
+
+html,
+body {
+	height: 100%;
+}
+
+body {
+	min-width: 1256px;
+	font-family: "#", sans-serif;
+	color: black;
+	font-size: 16px;
+}
+
+/******************* Base-style ************************/
+a:hover,
+a:active,
+a:visited,
+a:focus {
+	text-decoration: none;
+}
+
+/******************* Кнопки ************************/
+.btn {
+	line-height: 22px;
+	text-decoration: none;
+	font-size: 16px;
+	text-transform: uppercase;
+	background-color: grey;
+	-webkit-border-radius: 2px;
+	border-radius: 2px;
+	border: none;
+	outline: none;
+	-webkit-transition: all 0.4s;
+	transition: all 0.4s;
+}
+
+.btn:hover, .btn:active, .btn:visited, .btn:focus {
+	color: #fff;
+	outline: none !important;
+	background-color: deepskyblue;
+}
+
+.btn-round {
+	width: 100px;
+	padding: 15px 12px;
+	-webkit-border-radius: 15px;
+	border-radius: 15px;
+}
+
+.btn-size1 {
+	width: 150px;
+	padding: 15px 12px;
+}
+
+.btn-size2 {
+	width: 269px;
+	padding: 15px 12px;
+}
+
+.btn-stretch {
+	width: 100%;
+	padding: 15px 12px;
+}
+
+h1, h2, h3 {
+	margin: 0;
+	color: #262626;
+	font-family: "RalewayBold", sans-serif;
+}
+
+h1 {
+	padding-top: 15px;
+	padding-bottom: 12px;
+	font-size: 40px;
+	line-height: 38px;
+}
+
+h2 {
+	padding-top: 15px;
+	padding-bottom: 12px;
+	font-size: 30px;
+	line-height: 30px;
+}
+
+h3 {
+	padding-top: 15px;
+	padding-bottom: 12px;
+	font-size: 25px;
+	line-height: 26px;
+}
+
+p {
+	padding-bottom: 15px;
+}
+
+/*-- временный класс для разделения --*/
+.separator {
+	clear: both;
+	margin: 20px 0;
+	height: 20px;
+	text-align: center;
+	background-color: #f1f1f1;
+}
+
+/******************* Хлебные крошки ************************/
+.bread {
+	margin-top: 14px;
+	margin-bottom: 18px;
+	color: grey;
+}
+
+.bread a {
+	color: deepskyblue;
+}
+
+.bread .bread-separator {
+	padding: 0 5px;
+}
+
+/******************* header ************************/
+.main-header {
+	padding-top: 20px;
+	background: lightgrey;
+}
+
+.logo {
+	float: left;
+	margin-right: 20px;
+}
+
+.logo a {
+	color: black;
+}
+
+.logo_text {
+	display: inline-block;
+}
+
+.logo_img {
+	width: 100px;
+	height: 100px;
+}
+
+.contacts-info {
+	float: left;
+}
+
+.contacts-info div {
+	float: left;
+	padding-left: 30px;
+}
+
+.contacts-info_phone {
+	background: url(../img/location.png) no-repeat left;
+}
+
+/******************* Главная навигация ************************/
+.nav_list {
+	position: relative;
+	font-size: 0;
+	background: grey;
+}
+
+.nav_list > li {
+	display: inline-block;
+	font-size: 14px;
+}
+
+.nav_list > li a {
+	display: block;
+	color: deepskyblue;
+	padding: 10px 10px;
+	-webkit-transition: all 0.3s;
+	transition: all 0.3s;
+}
+
+.nav_dropdown {
+	position: absolute;
+	top: -9999px;
+	padding: 0;
+	list-style-type: none;
+	background: grey;
+	opacity: 0;
+	-webkit-transition: opacity 0.3s;
+	transition: opacity 0.3s;
+}
+
+.nav_dropdown li a {
+	padding-left: 20px;
+}
+
+.nav_list > li:hover .nav_dropdown {
+	top: 100%;
+	opacity: 1;
+}
+
+.nav_list > li:hover > a,
+.nav_list > li.active > a {
+	color: white;
+	background: black;
+}
+
+.nav_dropdown > li:hover > a,
+.nav_dropdown > li.active > a {
+	color: white;
+	background: black;
+}
+
+/******************* Футер без hit ************************/
+.main-footer {
+	height: 60px;
+	min-width: 1252px;
+  /*  overflow: hidden;*/
+	font-size: 14px;
+	color: white;
+	line-height: 60px;
+	background-color: grey;
+}
+
+.main-footer_copyright {
+	float: left;
+	vertical-align: middle;
+}
+
+.main-footer_creators {
+	float: right;
+	padding-right: 25px;
+	vertical-align: middle;
+	text-align: right;
+}
+
+.main-footer_creators img {
+	width: 75px;
+	height: 26px;
+	margin-left: 5px;
+}
+
+.main-footer_creators a {
+	color: white;
+}
+
+.main-footer_creators a:hover, .main-footer_creators a:active, .main-footer_creators a:focus {
+	text-decoration: underline;
+}
+
+/******************* Футер c hit ************************/
+.main-footer2 {
+	min-height: 60px;
+	min-width: 1252px;
+  /*  overflow: hidden;*/
+	font-size: 14px;
+	color: white;
+	line-height: 60px;
+	background-color: grey;
+}
+
+.main-footer2_copyright {
+	float: left;
+	width: 48.5%;
+	vertical-align: middle;
+}
+
+.main-footer2_hit {
+	display: inline-block;
+	text-align: center;
+	padding-left: 0.3%;
+}
+
+.main-footer2_creators {
+	float: right;
+	width: 48.5%;
+	padding-right: 25px;
+	vertical-align: middle;
+	text-align: right;
+}
+
+.main-footer2_creators img {
+	width: 75px;
+	height: 26px;
+	margin-left: 5px;
+}
+
+.main-footer2_creators a {
+	color: white;
+}
+
+.main-footer2_creators a:hover, .main-footer2_creators a:active, .main-footer2_creators a:focus {
+	text-decoration: underline;
+}
+
+/******************* модальное окно ************************/
+.modal .modal-dialog {
+	width: 600px;
+	-webkit-box-shadow: 0.5px 0.9px 38px rgba(0, 0, 0, 0.35);
+	box-shadow: 0.5px 0.9px 38px rgba(0, 0, 0, 0.35);
+}
+
+.modal .modal-content {
+	text-align: center;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+}
+
+.modal .modal-header {
+	position: relative;
+	border: 0;
+}
+
+.modal .modal-header .close {
+	opacity: 1;
+}
+
+.modal .modal-header .close span {
+	position: absolute;
+	right: -40px;
+	top: 0;
+	width: 40px;
+	height: 40px;
+	padding-left: 10px;
+	padding-top: 10px;
+	-webkit-border-radius: 2px;
+	border-radius: 2px;
+	-webkit-box-shadow: 2.6px 3.1px 0 rgba(196, 125, 125, 0.35);
+	box-shadow: 2.6px 3.1px 0 rgba(196, 125, 125, 0.35);
+}
+
+.modal .modal-title {
+	font-size: 40px;
+	line-height: 40px;
+}
+
+.modal .form-group {
+	width: 400px;
+	margin: auto;
+	margin-bottom: 10px;
+}
+
+.modal .form-group .form-control {
+	height: 35px;
+	color: black;
+	background-color: white;
+	border: 1px solid grey;
+	-webkit-border-radius: 1px;
+	border-radius: 1px;
+}
+
+.modal .form-group .form-control:focus {
+	-webkit-box-shadow: inset -3px 2px 14px -5px #989898;
+	box-shadow: inset -3px 2px 14px -5px #989898;
+}
+
+.modal .form-group option {
+	padding-top: 5px;
+}
+
+.enroll-modal input::-webkit-input-placeholder {
+	color: black !important;
+}
+
+.enroll-modal input:-moz-placeholder {
+  /* Firefox 18- */
+	color: black !important;
+}
+
+.enroll-modal input::-moz-placeholder {
+  /* Firefox 19+ */
+	color: black !important;
+}
+
+.enroll-modal input:-ms-input-placeholder {
+	color: black !important;
+}
+
+/* цвет тени модального окна */
+.modal-backdrop {
+	background: white;
+}
+
+/******************* Продление тенью ************************/
