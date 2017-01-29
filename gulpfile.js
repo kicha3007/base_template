@@ -12,7 +12,8 @@ var gulp = require('gulp'),
     cache = require('gulp-cache'), // Подключаем библиотеку кеширования
     autoprefixer = require('gulp-autoprefixer'), // Подключаем библиотеку для автоматического добавления префиксов
     pug = require('gulp-pug'),
-    cssbeautify = require('gulp-cssbeautify');
+    cssbeautify = require('gulp-cssbeautify'),
+    notify = require("gulp-notify");
 
 gulp.task('browser-sync', function() { // Создаем таск browser-sync
     browserSync({ // Выполняем browser Sync
@@ -25,7 +26,7 @@ gulp.task('browser-sync', function() { // Создаем таск browser-sync
 
 gulp.task('sass', function() { // Создаем таск Sass
     return gulp.src(['app/sass/**/*.scss', '!app/sass/**/_*.scss']) // Берем источник
-        .pipe(sass()) // Преобразуем Sass в CSS посредством gulp-sass
+        .pipe(sass()).on("error", notify.onError()) // Преобразуем Sass в CSS посредством gulp-sass
         .pipe(concat('styles.css'))
         .pipe(autoprefixer(['last 15 versions', '> 1%', 'ie 8', 'ie 7'], { cascade: true })) // Создаем префиксы
         .pipe(cssbeautify({
@@ -45,12 +46,12 @@ gulp.task('css-libs', ['sass'], function() {
 });
 
 gulp.task('pug', function() {
-    gulp.src(['app/templates/*.pug', '!app/templates/_*.pug'])
+    gulp.src(['app/templates/**/*.pug', '!app/templates/**/_*.pug'])
         .pipe(pug({
             pretty: true
-        })) // Собираем Jade только в папке ./app/template/ исключая файлы с _*
+        })).on("error", notify.onError()) // Собираем Jade только в папке ./app/template/ исключая файлы с _*
         .on('error', console.log) // Если есть ошибки, выводим и продолжаем
-        .pipe(gulp.dest('./app')) // Записываем собранные файлы
+        .pipe(gulp.dest('app/templates_html')) // Записываем собранные файлы
         .pipe(browserSync.reload({
             stream: true
         })) // даем команду на перезагрузку страницы
