@@ -1,0 +1,28 @@
+include _mixins
+
+doctype html
+html
+	head
+		title
+			block title
+		include include/fonts
+		include include/styles
+	body
+		.page-wrapper
+			include include/header
+			.top-menu-container
+				.container
+					include include/menu/menu2
+			.container.main_container
+				.sidebar
+					include include/menu/menu6
+				.content_container
+					include include/bread
+					h1
+						block h1
+					.content
+						block content
+
+			.page-buffer
+		include include/footer
+		include include/scripts

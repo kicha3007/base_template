@@ -1,0 +1,17 @@
+- 
+  var items = [
+    "Пункт 1", 
+    "Пункт 2", 
+    "Пункт 3"
+  ];
+
+  //itemContent= item
+  //itemIndex= index
+
+.nav
+  ul.nav__list
+      li
+        a.active(href="#") #{items[0]}
+      each item, index in items
+        li
+          a(href="#")= item

@@ -1,0 +1,15 @@
+extends ../../base
+block title
+  | Новости
+block h1
+  | Новости
+block content
+  .news
+    a.news__item(href="#")
+      .news__img-wrap
+        img
+      .news__title
+      .news__text
+      .news__date
+      .btn.news__btn
+  include pagination/pagination

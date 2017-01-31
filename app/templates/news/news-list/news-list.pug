@@ -1,0 +1,15 @@
+extends ../../base
+block title
+  | Новости
+block h1
+  | Новости
+block content
+  include news/_news
+    include news__item/_news__item
+      include news__img-wrap/_news__img-wrap
+        img
+      include news__title/_news__title
+      include news__text/_news__text
+      include news__date/_news__date
+      include news__btn/_news__btn
+  include pagination/pagination
